@@ -1,14 +1,14 @@
 const getOptions = ()=>{
-    console.log($('input[name=arrayDataWrap]'))
     return {
         arrayDataWrap: Array.from($('input[name=arrayDataWrap]')).find(el=>el.checked).value,
         arrayWrap: Array.from($('input[name=arrayWrap]')).find(el=>el.checked).value,
         arrayJoin: Array.from($('input[name=arrayJoin]')).find(el=>el.checked).value,
+        caseSensitivity: Array.from($('input[name=caseSensitivity]')).find(el=>el.checked).value,
     }
 }
 
 const setOutput = (array)=>{
-    const numLines = $(".numLines")[2];
+    const numLines = $(".num-lines")[2];
     numLines.innerHTML = "loading...";
     const l3 = $("#t3")[0]
 
@@ -47,16 +47,33 @@ const setOutput = (array)=>{
     numLines.innerHTML = `${l3.value.split("\n").filter(Boolean).length} lines`
 }
 const setOutputLoading = ()=>{
-    const numLines = $(".numLines")[2];
+    const numLines = $(".num-lines")[2];
     numLines.innerHTML = "loading...";
 
 }
 
 const getA = ()=>{
-    return $("#t1")[0].value.split("\n").filter(line=>line!=="")
+    const {caseSensitivity} = getOptions()
+    let values = $("#t1")[0].value.split("\n")
+    switch(caseSensitivity){
+        case "sensitive":
+            break;
+        case "insensitive":
+            values = values.map(el=>el.toLowerCase())
+    }
+    console.log(values)
+    return values.filter(line=>line!=="")
 }
 const getB = ()=>{
-    return $("#t2")[0].value.split("\n").filter(line=>line!=="")
+    const {caseSensitivity} = getOptions()
+    let values = $("#t2")[0].value.split("\n")
+    switch(caseSensitivity){
+        case "sensitive":
+            break;
+        case "insensitive":
+            values = values.map(el=>el.toLowerCase())
+    }
+    return values.filter(line=>line!=="")
 }
 
 const subtract = async (e)=>{
@@ -83,7 +100,7 @@ const unique = async (e)=>{
 }
 
 const updateLines = ()=>{
-    const numLines = $(".numLines");
+    const numLines = $(".num-lines");
     const A = $("#t1")[0]
     numLines[0].innerHTML = `${A.value.split("\n").filter(Boolean).length} lines`
     const B = $("#t2")[0]
@@ -97,7 +114,7 @@ const cleanText = async (e)=>{
     A.value = '';
     B.value = '';
     l3.value = '';
-    const numLines = $(".numLines");
+    const numLines = $(".num-lines");
     numLines[2].innerHTML = '0 lines';
     updateLines();
 }
@@ -107,7 +124,7 @@ $(window).ready(()=>{
     const ta2 = $("#t2")[0];
     const ta3 = $("#t3")[0];
     
-    const numLines = $(".numLines");
+    const numLines = $(".num-lines");
     
     ta1.addEventListener('input', function(e) {
         numLines[0].innerHTML = `${ta1.value.split("\n").filter(Boolean).length} lines`
