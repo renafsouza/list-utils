@@ -20,18 +20,8 @@ textarea::-webkit-scrollbar {
     display: none;
   }
 textarea{
-    height:25vh;
+    height: 25vh;
     resize: none;
-}
-#left{
-    display:flex;
-    flex-direction:row;
-    gap:10px;
-}
-#wrap{
-    gap:10px;
-    display:flex;
-    flex-direction:row;
 }
 fieldset *{
     cursor:pointer;
