@@ -76,7 +76,7 @@ const getB = ()=>{
     return values.filter(line=>line!=="")
 }
 
-const subtract = async (e)=>{
+const intersect = async (e)=>{
     setOutputLoading()
     const A = getA()
     let B = new Set(getB())
