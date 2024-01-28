@@ -1,0 +1,37 @@
+
+<head>
+    <link rel="stylesheet" type="text/css" href="index.css" media="screen" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="index.js"></script>
+    <title>List manipulations</title>
+</head>
+<style>
+</style>
+<script>
+</script>
+<div id="wrap">
+    <div id="left">
+        <div class="textareaWrap"><textarea id="t1"></textarea> <span class="numLines">0 lines</span></div>
+        <div class="textareaWrap"><textarea id="t2"></textarea> <span class="numLines">0 lines</span></div>
+        <div class="textareaWrap"><textarea id="t3"></textarea> <span class="numLines">0 lines</span></div>
+    </div>
+    <div id="buttons">
+        <button onclick="subtract(event)">subtract</button>
+        <button onclick="sqlIn(event)">sqlIn</button>
+        <button onclick="toArray(event)">toArray</button>
+        <button onclick="toKibanaQuery(event)">toKibanaQuery</button>
+        <button onclick="unique(event)">unique</button>
+        <button onclick="filter(event)">filter</button>
+        <button onclick="save(event)">save</button>
+        <button onclick="cleanText(event)">clear</button>
+    </div>
+    <div id="savedItems">
+    </div>
+</div>
+<script>
+</script>
+
+<script>
+    localStorage.setItem("savedItems",JSON.stringify(savedItems));
+    updateSavedItems()
+</script>

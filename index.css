@@ -1,0 +1,39 @@
+.flex-row{
+    display:flex;
+    flex-direction: row;
+}
+.flex-column{
+    display:flex;
+    flex-direction: column;
+}
+
+textarea{
+    width:550px;
+    height:50vh;
+    resize: none;
+}
+#buttons{
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+    width:200px;
+}
+#left{
+    display:flex;
+    flex-direction:row;
+    gap:10px;
+}
+#wrap{
+    gap:10px;
+    display:flex;
+    flex-direction:row;
+}
+.textareaWrap{
+    display:flex;
+    flex-direction:column;
+}
+#savedItems{
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+}
