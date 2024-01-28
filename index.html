@@ -1,37 +1,76 @@
-
 <head>
-    <link rel="stylesheet" type="text/css" href="index.css" media="screen" />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-    <script src="index.js"></script>
-    <title>List manipulations</title>
+  <link rel="stylesheet" type="text/css" href="index.css" media="screen" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <script src="index.js"></script>
+  <title>List manipulations</title>
 </head>
-<style>
-</style>
-<script>
-</script>
-<div id="wrap">
-    <div id="left">
-        <div class="textareaWrap"><textarea id="t1"></textarea> <span class="numLines">0 lines</span></div>
-        <div class="textareaWrap"><textarea id="t2"></textarea> <span class="numLines">0 lines</span></div>
-        <div class="textareaWrap"><textarea id="t3"></textarea> <span class="numLines">0 lines</span></div>
-    </div>
-    <div id="buttons">
-        <button onclick="subtract(event)">subtract</button>
-        <button onclick="sqlIn(event)">sqlIn</button>
-        <button onclick="toArray(event)">toArray</button>
-        <button onclick="toKibanaQuery(event)">toKibanaQuery</button>
-        <button onclick="unique(event)">unique</button>
-        <button onclick="filter(event)">filter</button>
-        <button onclick="save(event)">save</button>
-        <button onclick="cleanText(event)">clear</button>
-    </div>
-    <div id="savedItems">
-    </div>
+<style></style>
+<script></script>
+<div class="flex-column">
+  <div class="flex-row no-gap">
+    <container-label>A</container-label>
+    <textarea class="full-width" id="t1"></textarea> <span class="numLines">0 lines</span>
+  </div>
+  <div class="flex-row no-gap">
+    <container-label>B</container-label>
+    <textarea class="full-width" id="t2"></textarea> <span class="numLines">0 lines</span>
+  </div>
+  <div class="flex-row no-gap" id="options">
+    <container-label>Options</container-label>
+    <fieldset>
+      <legend>Array data wrap</legend>
+      <div>
+        <input type="radio" id="singleQuote" name="arrayDataWrap" value="singleQuote" checked/>
+        <label for="singleQuote">Single quotes</label>
+      </div>
+      <div>
+        <input type="radio" id="doubleQuote" name="arrayDataWrap" value="doubleQuote"  />
+        <label for="doubleQuote">Double quotes</label>
+      </div>
+      <div>
+        <input type="radio" id="nonArrayDataWrap" name="arrayDataWrap" value="none" />
+        <label for="nonArrayDataWrap">None</label>
+      </div>
+    </fieldset>
+    <fieldset>
+      <legend>Array wrap</legend>
+      <div>
+        <input type="radio" id="brackets" name="arrayWrap" value="brackets" checked/>
+        <label for="brackets">Brackets</label>
+      </div>
+      <div>
+        <input type="radio" id="parenthesis" name="arrayWrap" value="parenthesis"  />
+        <label for="parenthesis">Parenthesis</label>
+      </div>
+      <div>
+        <input type="radio" id="none" name="arrayWrap" value="none" />
+        <label for="none">None</label>
+      </div>
+    </fieldset>
+    <fieldset>
+      <legend>Array join</legend>
+      <div>
+        <input type="radio" id="comma" name="arrayJoin" value="comma" checked />
+        <label for="comma">comma</label>
+      </div>
+      <div>
+        <input type="radio" id="newLine" name="arrayJoin" value="newLine" />
+        <label for="newLine">newLine</label>
+      </div>
+      <div>
+        <input type="radio" id="space" name="arrayJoin" value="space" />
+        <label for="space">space</label>
+      </div>
+    </fieldset>
+  </div>
+  <div class="flex-row " id="buttons">
+    <button onclick="subtract(event)">subtract</button>
+    <button onclick="unique(event)">unique</button>
+    <button onclick="intersect(event)">intersect</button>
+    <button onclick="cleanText(event)">clear</button>
+  </div>
+  <div class="flex-row no-gap">
+    <container-label>Output</container-label>
+    <textarea class="full-width" id="t3"></textarea> <span class="numLines">0 lines</span>
+  </div>
 </div>
-<script>
-</script>
-
-<script>
-    localStorage.setItem("savedItems",JSON.stringify(savedItems));
-    updateSavedItems()
-</script>

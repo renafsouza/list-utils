@@ -1,22 +1,27 @@
 .flex-row{
     display:flex;
     flex-direction: row;
+    gap: 15px;
 }
 .flex-column{
+    gap: 15px;
     display:flex;
     flex-direction: column;
 }
 
-textarea{
-    width:550px;
-    height:50vh;
-    resize: none;
+.no-gap{
+    gap: 0;
 }
-#buttons{
-    display:flex;
-    flex-direction:column;
-    gap:10px;
-    width:200px;
+
+.full-width{
+    width:100%;
+}
+textarea::-webkit-scrollbar {
+    display: none;
+  }
+textarea{
+    height:25vh;
+    resize: none;
 }
 #left{
     display:flex;
@@ -28,12 +33,18 @@ textarea{
     display:flex;
     flex-direction:row;
 }
-.textareaWrap{
-    display:flex;
-    flex-direction:column;
+fieldset *{
+    cursor:pointer;
+    user-select: none; /* Standard syntax */
 }
-#savedItems{
-    display:flex;
-    flex-direction:column;
-    gap:10px;
+container-label{
+    width: 40px;
+    text-align: end;
+    padding-right: 15px;
+}
+.numLines {
+    width:100px;
+    margin-left: -100px;
+    align-self:flex-end;
+    text-align: end;
 }
