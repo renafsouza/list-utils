@@ -36,3 +36,9 @@ container-label{
     align-self:flex-end;
     text-align: end;
 }
+body, textarea, button{
+    background:#1f1f1f;
+}
+* {
+    color:white;
+}
