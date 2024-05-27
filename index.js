@@ -66,7 +66,6 @@ const getA = () => {
     case "insensitive":
       values = values.map((el) => el.toLowerCase());
   }
-  console.log(values);
   return values.filter((line) => line !== "");
 };
 const getB = () => {
