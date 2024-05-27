@@ -3,36 +3,74 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
   <script src="index.js"></script>
   <title>List Utils</title>
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/x-icon" href="favicon.ico" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap"
+    rel="stylesheet"
+  />
 </head>
 <style></style>
 <script></script>
 <div class="flex-column">
   <div class="flex-row no-gap">
     <container-label>A</container-label>
-    <textarea class="full-width" id="t1"></textarea> <span class="num-lines">0 lines</span>
+    <textarea class="full-width" id="t1"></textarea>
+    <span class="num-lines">0 lines</span>
   </div>
   <div class="flex-row no-gap">
     <container-label>B</container-label>
-    <textarea class="full-width" id="t2"></textarea> <span class="num-lines">0 lines</span>
+    <textarea class="full-width" id="t2"></textarea>
+    <span class="num-lines">0 lines</span>
   </div>
   <div class="flex-row no-gap" id="options">
     <container-label>Options</container-label>
+    <!-- <fieldset>
+      <legend>Presets</legend>
+      <div>
+        <input type="radio" id="js" name="presetsDataForm" value="js" />
+        <label for="js">JSON array</label>
+      </div>
+      <div>
+        <input
+          onchange="console.log"
+          type="radio"
+          id="sqlJoin"
+          name="presetsDataForm"
+          value="sqlJoin"
+        />
+        <label for="sqlJoin">SQL Join</label>
+      </div>
+    </fieldset> -->
     <fieldset>
       <legend>Wrap Items Symbol</legend>
       <div>
-        <input type="radio" id="singleQuote" name="arrayDataWrap" value="singleQuote" />
+        <input
+          type="radio"
+          id="singleQuote"
+          name="arrayDataWrap"
+          value="singleQuote"
+        />
         <label for="singleQuote">Single Quotes</label>
       </div>
       <div>
-        <input type="radio" id="doubleQuote" name="arrayDataWrap" value="doubleQuote"  />
+        <input
+          type="radio"
+          id="doubleQuote"
+          name="arrayDataWrap"
+          value="doubleQuote"
+        />
         <label for="doubleQuote">Double Quotes</label>
       </div>
       <div>
-        <input type="radio" id="nonArrayDataWrap" name="arrayDataWrap" value="none" checked/>
+        <input
+          type="radio"
+          id="nonArrayDataWrap"
+          name="arrayDataWrap"
+          value="none"
+          checked
+        />
         <label for="nonArrayDataWrap">None</label>
       </div>
     </fieldset>
@@ -43,22 +81,33 @@
         <label for="brackets">Brackets</label>
       </div>
       <div>
-        <input type="radio" id="parenthesis" name="arrayWrap" value="parenthesis"  />
+        <input
+          type="radio"
+          id="parenthesis"
+          name="arrayWrap"
+          value="parenthesis"
+        />
         <label for="parenthesis">Parenthesis</label>
       </div>
       <div>
-        <input type="radio" id="none" name="arrayWrap" value="none" checked/>
+        <input type="radio" id="none" name="arrayWrap" value="none" checked />
         <label for="none">None</label>
       </div>
     </fieldset>
     <fieldset>
       <legend>Join Symbol</legend>
       <div>
-        <input type="radio" id="comma" name="arrayJoin" value="comma"  />
+        <input type="radio" id="comma" name="arrayJoin" value="comma" />
         <label for="comma">Comma</label>
       </div>
       <div>
-        <input type="radio" id="newLine" name="arrayJoin" value="newLine" checked/>
+        <input
+          type="radio"
+          id="newLine"
+          name="arrayJoin"
+          value="newLine"
+          checked
+        />
         <label for="newLine">New Line</label>
       </div>
       <div>
@@ -69,11 +118,22 @@
     <fieldset>
       <legend>Case Sensitivity</legend>
       <div>
-        <input type="radio" id="sensitive" name="caseSensitivity" value="sensitive" checked />
+        <input
+          type="radio"
+          id="sensitive"
+          name="caseSensitivity"
+          value="sensitive"
+          checked
+        />
         <label for="sensitive">Sensitive</label>
       </div>
       <div>
-        <input type="radio" id="insensitive" name="caseSensitivity" value="insensitive"  />
+        <input
+          type="radio"
+          id="insensitive"
+          name="caseSensitivity"
+          value="insensitive"
+        />
         <label for="insensitive">Insensitive</label>
       </div>
     </fieldset>
@@ -81,13 +141,15 @@
   <div class="flex-row no-gap" id="buttons">
     <container-label>Operations</container-label>
     <div class="flex-row">
-    <button onclick="subtract(event)">A - B</button>
-    <button onclick="unique(event)">Unique A</button>
-    <button onclick="intersect(event)">A ∩ B</button>
-    <button onclick="cleanText(event)">Clear All</button></div>
+      <button onclick="subtract(event)">A - B</button>
+      <button onclick="unique(event)">Unique A</button>
+      <button onclick="intersect(event)">A ∩ B</button>
+      <button onclick="cleanText(event)">Clear All</button>
+    </div>
   </div>
   <div class="flex-row no-gap">
     <container-label>Output</container-label>
-    <textarea class="full-width" id="t3"></textarea> <span class="num-lines">0 lines</span>
+    <textarea class="full-width" id="t3"></textarea>
+    <span class="num-lines">0 lines</span>
   </div>
 </div>
